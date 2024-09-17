@@ -39,7 +39,6 @@ class _NouveauState extends State<Nouveau> {
     String contenu = _contenuController.text;
     DateTime now = DateTime.now();
 
-    // Vérifier si le titre et le contenu sont vides
     if (titre.isEmpty && contenu.isEmpty) {
       showDialog(
         context: context,
@@ -59,13 +58,10 @@ class _NouveauState extends State<Nouveau> {
       return;
     }
 
-    // Si l'index est passé, on modifie la note, sinon on ajoute une nouvelle note
     if (widget.status == true && widget.indexNote != null) {
-      // Modifier la note existante
       widget.onSave(titre, contenu, now, widget.indexNote);
       print('Note modifiée');
     } else {
-      // Ajouter une nouvelle note
       widget.onSave(titre, contenu, now);
       print('Nouvelle note ajoutée');
     }

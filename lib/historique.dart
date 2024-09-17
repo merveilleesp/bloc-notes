@@ -28,7 +28,6 @@ class _HistoriqueState extends State<Historique> {
   void onSave(String titre, String contenu, DateTime now, [int? index]) {
     setState(() {
       if (index != null) {
-        // Modification d'une note existante à l'index
         notes[index] = {
           'titre': titre,
           'contenu': contenu,
@@ -36,7 +35,6 @@ class _HistoriqueState extends State<Historique> {
         };
         print('Note modifiée à l\'index $index');
       } else {
-        // Ajout d'une nouvelle note
         notes.add({
           'titre': titre,
           'contenu': contenu,
@@ -58,7 +56,7 @@ class _HistoriqueState extends State<Historique> {
           contenu: contenu,
           existeNotes: notes,
           status: true,
-          indexNote: index,  // Passer l'index pour modification
+          indexNote: index,
         ),
       ),
     );
@@ -195,7 +193,6 @@ class _HistoriqueState extends State<Historique> {
                 '${dateTime.toLocal().toString().split(' ')[1].split('.')[0]} '
                     '${dateTime.toLocal().toString().split(' ')[0]}',
               ),
-              // Supprimez l'icône d'édition et utilisez onTap
               onTap: () {
                 _editer(
                   note['titre'],
