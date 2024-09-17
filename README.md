@@ -24,7 +24,7 @@ Cette application de prise de notes permet aux utilisateurs de créer, modifier,
 
 ```bash
 git clone https://github.com/merveilleesp/bloc-notes.git
-cd my-bloc-notes
+cd bloc-notes
 
 ## Installer les dependances
 
